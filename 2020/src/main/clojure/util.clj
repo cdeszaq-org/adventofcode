@@ -5,11 +5,15 @@
   [input-name]
   (slurp (str "resources/" input-name ".input")))
 
+(defn parse-rows
+  "Parse a string into rows"
+  [string]
+  (clojure.string/split string #"\n"))
+
 (defn parse-csv
   "Parse a CSV into rows of columns"
   [string]
-  (map #(clojure.string/split % #",")
-       (clojure.string/split string #"\n")))
+  (map #(clojure.string/split % #",") (parse-rows string)))
 
 (defn flip
   "Flip (reverse) the arguments on the function

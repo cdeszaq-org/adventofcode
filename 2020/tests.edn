@@ -1,0 +1,13 @@
+#kaocha/v1
+    {:tests [{;; Every suite must have an :id
+              :id :unit
+
+              ;; Directories containing files under test. This is used to
+              ;; watch for changes, and when doing code coverage analysis
+              ;; through Cloverage. These directories are *not* automatically
+              ;; added to the classpath.
+              :source-paths ["src/main/clojure"]
+
+              ;; Directories containing tests. These will automatically be
+              ;; added to the classpath when running this suite.
+              :test-paths ["src/test/clojure"]}]}

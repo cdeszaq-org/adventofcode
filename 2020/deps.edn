@@ -1,0 +1,17 @@
+{:paths ["resources" "src/main/clojure"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        nrepl/nrepl {:mvn/version "0.8.3"}
+
+        ; Efficient lazy combinatorial functions
+        ; https://github.com/clojure/math.combinatorics
+        org.clojure/math.combinatorics {:mvn/version "0.1.6"}}
+ :aliases {; Run tests
+           :test {:extra-paths ["src/test/clojure"]
+                  :extra-deps {lambdaisland/kaocha {:mvn/version "1.0.690"}}
+                  :main-opts ["-m" "kaocha.runner"]}
+           ; Run tests in a continual mode (watching)
+           :watch {:extra-paths ["src/test/clojure"]
+                   :extra-deps {lambdaisland/kaocha {:mvn/version "1.0.690"}}
+                   :main-opts ["-m" "kaocha.runner"
+                               "--watch" "--fail-fast" "--no-randomize"]}
+           }}

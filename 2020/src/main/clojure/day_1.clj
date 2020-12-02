@@ -27,7 +27,7 @@
 
 (defn solve-puzzle
   [n]
-  (->> "day_1"                                     ; Problem input
+  (->> "day_1"                                              ; Problem input
        deserialize
        (solve n)))
 

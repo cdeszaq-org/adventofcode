@@ -1,11 +1,11 @@
-(ns day-1-puzzle-1
+(ns day-1
   (:require [clojure.math.combinatorics :refer :all]
             [util :refer :all]))
 
 (defn sum-to-2020?
   "Do the numbers sum to 2020?"
-  [[first second]]
-  (= 2020 (+ first second)))
+  [numbers]
+  (= 2020 (reduce + numbers)))
 
 (defn- deserialize
   "Parse the input resource into the shape the solver requires"
@@ -18,20 +18,21 @@
 
 (defn solve
   "Find two entries that sum to 2020 and then multiply those two numbers together"
-  [entries]
+  [n entries]
   (->> entries
-       ((flip combinations) 2)                              ; Get all 2-element combinations
-       (filter sum-to-2020?)                                ; Filter to pairs that sum to 2020
-       first                                                ; Grab the first pair
-       (reduce *)))                                         ; Get the product the pair
+       ((flip combinations) n)                              ; Get all n-element combinations
+       (filter sum-to-2020?)                                ; Filter to combinations that sum to 2020
+       first                                                ; Grab the first combination
+       (reduce *)))                                         ; Get the product of the combination
 
 (defn solve-puzzle
-  []
-  (->> "day_1_puzzle_1"                                     ; Problem input
+  [n]
+  (->> "day_1"                                     ; Problem input
        deserialize
-       solve))
+       (solve n)))
 
 (defn -main
   "Print the solution in a human-friendly way"
   []
-  (println "Day 1, puzzle 1:" (solve-puzzle)))
+  (println "Day 1, puzzle 1:" (solve-puzzle 2))
+  (println "Day 1, puzzle 2:" (solve-puzzle 3)))

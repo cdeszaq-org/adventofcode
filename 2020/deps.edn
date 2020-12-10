@@ -13,5 +13,4 @@
            :watch {:extra-paths ["src/test/clojure"]
                    :extra-deps {lambdaisland/kaocha {:mvn/version "1.0.690"}}
                    :main-opts ["-m" "kaocha.runner"
-                               "--watch" "--fail-fast" "--no-randomize"]}
-           }}
+                               "--watch" "--fail-fast" "--no-randomize"]}}}

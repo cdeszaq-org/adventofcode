@@ -18,9 +18,7 @@
         second (get string (dec max))]
     (and (not (= first second))                             ; If they are the same, invalid since more than 1 might match
          (or (= first letter)                               ; See if one of them matches
-             (= second letter)))
-    )
-  )
+             (= second letter)))))
 
 (defn- parse-min-max
   "Parse the min-max component of a policy into a min and max component"
@@ -37,9 +35,7 @@
     {:min (first dash-split)
      :max (last dash-split)
      :letter (first (second space-split))
-     :string (last space-split)}
-    )
-  )
+     :string (last space-split)}))
 
 (defn- deserialize
   "Parse the input resource into the shape the solver requires"

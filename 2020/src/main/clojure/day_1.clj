@@ -1,6 +1,6 @@
 (ns day-1
-  (:require [clojure.math.combinatorics :refer :all]
-            [util :refer :all]))
+  (:require [util :refer :all]
+            [clojure.math.combinatorics :refer :all]))
 
 (defn sum-to-2020?
   "Do the numbers sum to 2020?"

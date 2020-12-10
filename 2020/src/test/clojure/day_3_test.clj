@@ -15,15 +15,9 @@
 .#..#...#.#
 ")
 
-(def example-input2 "#23456789
-abc#efghi
-jklmno#qr
-#tuvwxyz0
-ABC#EFGHI
-JKLMNO#QR
-#TUVWXYZ~
-!@##%^&*(
-")
-
 (deftest example-is-correct-for-pair
-  (is (= 7 (solve example-input))))
+  (is (= 2 (solve 1 1 example-input)))
+  (is (= 7 (solve 3 1 example-input)))
+  (is (= 3 (solve 5 1 example-input)))
+  (is (= 4 (solve 7 1 example-input)))
+  (is (= 2 (solve 1 2 example-input))))

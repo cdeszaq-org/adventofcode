@@ -1,0 +1,13 @@
+node_modules
+public/js
+out
+.shadow-cljs
+.nrepl-port
+.clj-kondo/.cache
+yarn-error.log
+report.html
+
+# Project-specific stuff
+pre2021Work/.cache/
+pre2021Work/.clj-kondo/.cache/
+pre2021Work/.lsp/.cache/

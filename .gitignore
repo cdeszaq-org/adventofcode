@@ -1,11 +1,23 @@
-node_modules
+node_modules/
 public/js
-out
+
+/target
+/checkouts
+/src/gen
+
+pom.xml
+pom.xml.asc
+*.iml
+*.jar
+*.log
 .shadow-cljs
-.nrepl-port
-.clj-kondo/.cache
-yarn-error.log
-report.html
+.idea
+.lein-*
+.nrepl-*
+.DS_Store
+
+.hgignore
+.hg/
 
 # Project-specific stuff
 pre2021Work/.cache/

@@ -5,3 +5,7 @@
 (deftest fake-test
   (testing "fake description"
     (is (= 1 2))))
+
+(deftest fake-test2
+  (testing "fake description"
+    (is (= 3 3))))

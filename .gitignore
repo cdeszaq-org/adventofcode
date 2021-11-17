@@ -17,6 +17,9 @@
 # clj-kondo cache
 /.clj-kondo/.cache
 
+# Calva
+.calva/output-window/output.calva-repl
+
 # Project-specific stuff
 pre2021Work/.cache/
 pre2021Work/.clj-kondo/.cache/

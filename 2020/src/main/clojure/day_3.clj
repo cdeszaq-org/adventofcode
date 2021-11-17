@@ -13,6 +13,13 @@
   [distance rows]
   (take-nth distance rows))
 
+(defn traverse
+  ""
+  [right down rows]
+  (->> rows
+       (travel-down down)
+       (travel-right right)))
+
 (defn build-forest
   ""
   [tree-map]
@@ -31,8 +38,7 @@
   [right down example-input]
   (->> example-input
        build-forest
-       (travel-down down)
-       (travel-right right)
+       (traverse right down)
        count-trees))
 
 (defn solve-puzzle

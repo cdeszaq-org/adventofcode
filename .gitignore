@@ -1,23 +1,21 @@
-node_modules/
-public/js
+/out/
+/resources/public/js/compiled/
+/target/
+/*-init.clj
+/*.log
 
-/target
-/checkouts
-/src/gen
+# Leiningen
+/.lein-*
+/.nrepl-port
 
-pom.xml
-pom.xml.asc
-*.iml
-*.jar
-*.log
-.shadow-cljs
-.idea
-.lein-*
-.nrepl-*
-.DS_Store
+# Node.js dependencies
+/node_modules/
 
-.hgignore
-.hg/
+# shadow-cljs cache, port files
+/.shadow-cljs/
+
+# clj-kondo cache
+/.clj-kondo/.cache
 
 # Project-specific stuff
 pre2021Work/.cache/

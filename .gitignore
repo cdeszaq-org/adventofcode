@@ -18,9 +18,14 @@
 /.clj-kondo/.cache
 
 # Calva
-.calva/output-window/output.calva-repl
+/.calva/output-window/output.calva-repl
+
+# lsp
+/.lsp/.cache
+
 
 # Project-specific stuff
 pre2021Work/.cache/
 pre2021Work/.clj-kondo/.cache/
 pre2021Work/.lsp/.cache/
+

@@ -34,10 +34,14 @@
   "Determine the which direction results in entering the basement (floor < 0) first.
    The first instruction is instruction 1."
   [directions]
-  (->> directions
-       (running-floor)
-       (keep-indexed #(when (neg? %2) %1))
-       (first)))
+  (some->> directions
+           (running-floor)
+           ; Convert to indicies but only keep indicies for negative values
+           (keep-indexed (fn [index val] (when (neg? val) index)))
+           ; We only care about the first time we go negative (enter the basement)
+           (first)
+           ; Floor instructions are 1-indexed, not 0-indexed
+           (inc)))
 
 ; Day 1, Part 1 Revised
 (defn elevator-wayfind2
@@ -46,4 +50,5 @@
   [directions]
   (->> directions
        (running-floor)
+       ; We only care about the the last floor since that is the end
        (last)))

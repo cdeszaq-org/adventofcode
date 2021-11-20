@@ -25,11 +25,13 @@
 (defn parse-elevator-directions
   "Parse elevator commands from a string into a known set of commands"
   [directions]
-  (let [parsed (s/conform ::directions (seq directions))]
-    (if (s/invalid? parsed)
-      (throw (ex-info "Invalid input" (s/explain-data :directions directions)))
-      ; Take just the parsing labels, since the direction is what we care about
-      (map first parsed))))
+  (let [string-seq (seq directions)
+        parsed (s/conform ::directions string-seq)]
+    ; Blow up unsefully on bad input
+    (when (s/invalid? parsed)
+      (throw (ex-info "Invalid input" (s/explain-data :directions directions))))
+    ; Take just the parsing labels, since the direction is what we care about
+    (map first parsed)))
 
 (defn elevator-wayfind
   "Given a series of up/down indicators, find the floor the elevator ends on starting at 0"

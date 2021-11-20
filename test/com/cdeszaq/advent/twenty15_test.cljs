@@ -25,7 +25,7 @@
   (testing "part 2: "
     (testing "running floor calculates correctly"
       (are [floors directions]
-           (= floors (adv/running-floor directions))
+           (= floors (adv/running-floor (adv/parse-elevator-directions directions)))
         [0] ""
         [1 2 1 0] "(())"
         [1 0 1 0] "()()"

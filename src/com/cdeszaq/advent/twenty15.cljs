@@ -16,7 +16,7 @@
        ; Separate the up/down characters
        (group-by identity)
        ; Count how many of each there are
-       (reduce-kv #(assoc %1 %2 (count %3)) {})
+       (reduce-kv (fn [acc key val] (assoc acc key (count val))) {})
        ; Combine those to determine the difference in the ups vs. the downs
        (floor-differential)))
 

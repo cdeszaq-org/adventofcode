@@ -18,7 +18,10 @@
   ; Keybinding event management
   [re-pressed "0.3.1"]
 
-  [day8/shadow-git-inject "0.0.5"]]
+  [day8/shadow-git-inject "0.0.5"]
+  
+  ; Math helpers
+  [org.clojure/math.combinatorics "0.1.6"]]
 
  :build-defaults
  {:build-hooks [(shadow-git-inject.core/hook)]}

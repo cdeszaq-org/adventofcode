@@ -1,6 +1,6 @@
-(ns com.cdeszaq.advent.twenty15-test
+(ns com.cdeszaq.adventofcode.twenty15-test
   (:require [cljs.test :refer-macros [deftest testing is are]]
-            [com.cdeszaq.advent.twenty15 :as adv]))
+            [com.cdeszaq.adventofcode.twenty15 :as adv]))
 
 (deftest day1
   (testing "part 1: "

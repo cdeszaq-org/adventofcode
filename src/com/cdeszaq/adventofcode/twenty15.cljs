@@ -1,4 +1,4 @@
-(ns com.cdeszaq.advent.twenty15
+(ns com.cdeszaq.adventofcode.twenty15
   (:require [cljs.spec.alpha :as s]
             [clojure.math.combinatorics :as combo]
             [clojure.string :as str]))

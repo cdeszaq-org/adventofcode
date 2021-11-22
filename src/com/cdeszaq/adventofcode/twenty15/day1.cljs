@@ -1,7 +1,5 @@
 (ns com.cdeszaq.adventofcode.twenty15.day1
-  (:require [cljs.spec.alpha :as s]
-            [clojure.math.combinatorics :as combo]
-            [clojure.string :as str]))
+  (:require [cljs.spec.alpha :as s]))
 
 (comment
   ; Play w/ specs in the cljs repl

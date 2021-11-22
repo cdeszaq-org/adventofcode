@@ -14,23 +14,25 @@
 
 (def directions-to-deltas {::up [0 1] ::right [1 0] ::down [0 -1] ::left [-1 0]})
 
-(defn parse-directions
-  [input]
-  (map input-to-directions input))
-
 (defn apply-delta
   ""
   [current delta]
   (map + current delta))
 
+(defn house-visits
+  ""
+  [input]
+  (->> input
+       (map input-to-directions)
+       (map directions-to-deltas)
+       (reductions apply-delta [0 0])
+       (group-by identity)))
+
 (defn house-count
   ""
   [input]
   (->> input
-       (parse-directions)
-       (map directions-to-deltas)
-       (reductions apply-delta [0 0])
-       (group-by identity)
+       (house-visits)
        (keys)
        (count)))
 
@@ -53,5 +55,15 @@
     (transient {}) 
     coll)))
 
-(comment (reduce-kv (fn [acc key val] (assoc acc key (count val))) {} [])
-         (reduce))
+(defn combined-house-count
+  ""
+  [input]
+  (->> input
+       (vec) ; group-by-kv can't handle non-vec?
+       (group-by-kv #(odd? %1))
+       (vals)
+       (map house-visits)
+       (reduce merge)
+       (keys)
+       (count)
+       ))

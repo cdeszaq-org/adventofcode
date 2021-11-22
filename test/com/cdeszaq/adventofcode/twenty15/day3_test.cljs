@@ -18,10 +18,10 @@
   (testing "part 2: "
     (testing "the right number of houses are counted"
       (are [houses directions]
-           (= houses (aoc/house-count directions))
-        3 ">"
+           (= houses (aoc/combined-house-count directions))
+        3 "^v"
         3 "^>v<"
         11 "^v^v^v^v^v")
 
       (testing "puzzle input"
-        (is (= 0 (aoc/house-count puzzle-input)))))))
+        (is (= 2341 (aoc/combined-house-count puzzle-input)))))))

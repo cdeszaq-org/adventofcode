@@ -21,7 +21,10 @@
   [day8/shadow-git-inject "0.0.5"]
   
   ; Math helpers
-  [org.clojure/math.combinatorics "0.1.6"]]
+  [org.clojure/math.combinatorics "0.1.6"]
+  
+  ; MD5 Hashing
+  [thedavidmeister/cljc-md5 "0.0.2"]]
 
  :build-defaults
  {:build-hooks [(shadow-git-inject.core/hook)]}

@@ -15,8 +15,11 @@
       (is (= 7 (aoc/count-depth-increases [199 200 208 210 200 207 240 269 260 263]))))
 
     (testing "problem input"
-      (is (= 1121 (aoc/count-depth-increases (aoc/parse-depth-measurements puzzle-input)))))
-    
+      (is (= 1121 (aoc/count-depth-increases (aoc/parse-depth-measurements puzzle-input))))))
+  
+  (testing "part 2: "
+    (testing "sample problem"
+      (is (= 5 (aoc/count-depth-increases2 [199 200 208 210 200 207 240 269 260 263]))))
 
-
-    ))
+    (testing "problem input"
+      (is (= 1065 (aoc/count-depth-increases2 (aoc/parse-depth-measurements puzzle-input)))))))

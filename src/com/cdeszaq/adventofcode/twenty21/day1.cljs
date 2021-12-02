@@ -27,3 +27,16 @@
        (filter #(= ::increase %))
        count))
 
+; Part 2
+(defn count-depth-increases2
+  [depths]
+  (->> depths
+       ; Get the 3-window sums
+       (partition 3 1)
+       (map #(reduce + %))
+       ; Get the deltas
+       (partition 2 1)
+       (map direction-change)
+       ; We only care aobut increase
+       (filter #(= ::increase %))
+       count))
